@@ -22,9 +22,18 @@ const validationQuest = (c) =>{
         let arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no querer escriba 'no'.");
         let boleanSignatures = converTStringSignatures(arraysSignatures);
         console.log(boleanSignatures);
-        while(boleanSignatures == true){
-            arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no querer escriba 'no'.");
-            boleanSignatures = converTStringSignatures(arraysSignatures);
+        if (boleanSignatures == true){
+            while(boleanSignatures == true){
+                arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no querer escriba 'no'.");
+                boleanSignatures = converTStringSignatures(arraysSignatures);
+                if (boleanSignatures == true){
+                    alert("Prosiga");
+                }else{
+                    alert("Muchas Gracias, puede irse");
+                }
+            }
+        }else{
+            alert("Muchas Gracias, puede irse");
         }
     }else{
         alert("Muchas Gracias, puede irse.")
