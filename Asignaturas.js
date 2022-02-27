@@ -21,11 +21,18 @@ const validationQuest = (c) =>{
     if (boleanQuestion == true){
         let arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no querer escriba 'no'.");
         let boleanSignatures = converTStringSignatures(arraysSignatures);
+        let createArraysSignatures = [];
+        let definitiveArraysSignature = createArraysSignatures.push(arraysSignatures);
+        console.log(definitiveArraysSignature)
         console.log(boleanSignatures);
         if (boleanSignatures == true){
             while(boleanSignatures == true){
                 arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no querer escriba 'no'.");
-                boleanSignatures = converTStringSignatures(arraysSignatures);
+                console.log(arraysSignatures);
+                let boleanSignatures = converTStringSignatures(arraysSignatures);
+                let definitiveArraysSignature = createArraysSignatures.push(arraysSignatures);
+                console.log(definitiveArraysSignature);
+                console.log(createArraysSignatures);
                 if (boleanSignatures == true){
                     alert("Prosiga");
                 }else{
