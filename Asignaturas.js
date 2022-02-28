@@ -4,15 +4,21 @@ class Clases{
         this.profesores = profesores;
         this.alumnos = alumnos;
         /* this.preguntaAsignatura = prompt("Desea incscribirse en las asignaturas"); */
-        this.asInfo = `<b>Esta son las asignaturas:</b> ${this.asignaturas}`;
-        this.pInfo = `<b>Esto son los profesores:</b> ${this.profesores}`;
-        this.sInfo = `<b>Esto son los alumnos:</b> ${this.alumnos}`;
     }infoOfSignatures(){
-        document.write(`${this.asInfo}+ <br>`);
+        let trueSignature = this.asignaturas.filter(function(sig){
+            document.write(sig + "<br>");
+        })
+        document.write(trueSignature);
     }infoOfProfesors(){
-        document.write(this.pInfo+ "<br>");
+        let trueProfesor = this.profesores.filter(function(pro){
+            document.write(pro + "<br>");
+        })
+        document.write(trueProfesor);
     }infoOfStudent(){
-        document.write(this.sInfo+"<br>");
+        let trueStudent = this.alumnos.filter(function(stu){
+            document.write(stu + "<br>");
+        })
+        document.write(trueStudent);
     }
 }
 
@@ -61,13 +67,30 @@ const validationQuest = (c) =>{
     }
 }
 
+const opcionesOfSystem = ()=>{
+    let opcions = prompt("Que operacion desea hacer: 1- Ver informacion, 2- Ingresar en las Escuela e inscribirse en las asignaturas");
+    if (opcions == 1){
+        let menu = prompt("Este es el menu de informacion. 1- Conocer asignaturas, 2- Conocer Profesores, 3- Conocer Alumnos 4-Clases");
+        if(menu == 1){
+            clasesCofla.infoOfSignatures();
+        }else if (menu == 2){
+            clasesCofla.infoOfProfesors();
+        }else if(menu == 3){
+            clasesCofla.infoOfStudent();
+        }else if (menu == 4){
+
+        }else{
+
+        }
+    }else if(opcions == 2){
+
+    }
+}
 
 let signature =  ["Matematica", "Algebra", "Programacion POO", "Logica", "Ingeneria de sistemas", "Calculo", "Programacion Phyton", "Programacion Php", "Git y Github", "Scrum", "Marketin Digital", "Ingles"];
 let profesors =  ["Alberto Perez", "Rodrigo Martinez", "Pablo Fench", "Lixandra Labandera","Marcos Piotosi", "Maritza Cabello"];
-let student = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez"];
+let student = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez", "Yordi Garcia", "Jesler Gutierrez", "Raiko Saiz", "Anelys Padilla", "Lisandra Portales", "Camila Cabello", "Alain Alderete", "Pocho Gonzales", "Mario Napoles", "Charry Misifu"];
 
 const clasesCofla = new Clases(signature,profesors,student);
 
-clasesCofla.infoOfSignatures();
-clasesCofla.infoOfProfesors();
-clasesCofla.infoOfStudent();
+opcionesOfSystem();
