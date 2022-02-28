@@ -1,7 +1,21 @@
-let asignaturas = ["Matematica", "Algebra", "Programacion POO", "Logica", "Ingeneria de sistemas", "Calculo", "Programacion Phyton", "Programacion Php", "Git y Github", "Scrum", "Marketin Digital", "Ingles"];
-let profesores = ["Alberto Perez", "Rodrigo Martinez", "Pablo Fench", "Lixandra Labandera","Marcos Piotosi", "Maritza Cabello"];
-let alumnos = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez"];
-let preguntaAsignatura = prompt("Desea incscribirse en las asignaturas");
+class Clases{
+    constructor(asignatura, profesores, alumnos){
+        this.asignaturas = asignatura;
+        this.profesores = profesores;
+        this.alumnos = alumnos;
+        /* this.preguntaAsignatura = prompt("Desea incscribirse en las asignaturas"); */
+        this.asInfo = `<b>Esta son las asignaturas:</b> ${this.asignaturas}`;
+        this.pInfo = `<b>Esto son los profesores:</b> ${this.profesores}`;
+        this.sInfo = `<b>Esto son los alumnos:</b> ${this.alumnos}`;
+    }infoOfSignatures(){
+        document.write(`${this.asInfo}+ <br>`);
+    }infoOfProfesors(){
+        document.write(this.pInfo+ "<br>");
+    }infoOfStudent(){
+        document.write(this.sInfo+"<br>");
+    }
+}
+
 
 const converTString = (a) =>{
     switch(a.toLowerCase()){
@@ -47,4 +61,13 @@ const validationQuest = (c) =>{
     }
 }
 
-validationQuest(preguntaAsignatura);
+
+let signature =  ["Matematica", "Algebra", "Programacion POO", "Logica", "Ingeneria de sistemas", "Calculo", "Programacion Phyton", "Programacion Php", "Git y Github", "Scrum", "Marketin Digital", "Ingles"];
+let profesors =  ["Alberto Perez", "Rodrigo Martinez", "Pablo Fench", "Lixandra Labandera","Marcos Piotosi", "Maritza Cabello"];
+let student = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez"];
+
+const clasesCofla = new Clases(signature,profesors,student);
+
+clasesCofla.infoOfSignatures();
+clasesCofla.infoOfProfesors();
+clasesCofla.infoOfStudent();
