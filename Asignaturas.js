@@ -19,6 +19,14 @@ class Clases{
             document.write(stu + "<br>");
         })
         document.write(trueStudent);
+    }correspondetTeacher(){
+        document.write(`<b>Profesor - Asignatura</b>: Alberto Perez  - Matematica, Algebra. <br>
+        _______ Rodrigo Martinez - Programacion POO, Logica. <br>
+        _______ Pablo Fench - Ingeneria de sistemas, Calculo. <br>
+        _______ Lixandra Labandera - Programacion Phyton, Programacion Php. <br>
+        _______ Marcos Piotosi - Git y Github, Scrum. <br>
+        _______ Maritza Cabello - Marketin Digital, Ingles. <br></Br>`)
+        
     }
 }
 
@@ -78,12 +86,14 @@ const opcionesOfSystem = ()=>{
         }else if(menu == 3){
             clasesCofla.infoOfStudent();
         }else if (menu == 4){
-
+            clasesCofla.correspondetTeacher();
         }else{
-
+            alert("Muchas Gracias, puede irse o realice una operacion valida.");
         }
     }else if(opcions == 2){
 
+    }else{
+        alert("Muchas Gracias, puede irse o realice una operacion valida.");
     }
 }
 
