@@ -27,6 +27,34 @@ class Clases{
         _______ Marcos Piotosi - Git y Github, Scrum. <br>
         _______ Maritza Cabello - Marketin Digital, Ingles. <br></Br>`)
         
+    }opcionesOfSystem2(){
+        let autenticationStudent = prompt("Cual es tu nombre.");
+        if (this.alumnos.includes(autenticationStudent) == true){
+            let decitionsStudent = prompt("Quiere inscribirse, si o no?");
+            if(decitionsStudent.toLocaleLowerCase() == "si"){
+                while(decitionsStudent.toLocaleLowerCase() == "si"){
+                    let arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no continuar escriba 'no'.");
+                    let createArraysSignatures = [];
+                    let definitiveArraysSignature = createArraysSignatures.push(arraysSignatures);
+                    document.write(`${autenticationStudent}: ${createArraysSignatures}`);
+                    if(this.asignaturas.includes(arraysSignatures) == true){
+                        alert("Prosiga");
+                    }else if(arraysSignatures == "no"){
+                        alert("Muchas Gracias, puede irse");
+                        break;
+                    }else{
+                        alert("Se ha equivocado o la asignatura no se encuentra para impartir, por favor escriba una asignatura valida.");
+                        break;
+                }
+            }
+            }else if(decitionsStudent.toLocaleLowerCase() == "no"){
+                alert("Muchas Gracias, por favor continue.");
+            }else{
+                alert("Se ha equivocado de respuesta, por favor escriba 'si' o 'no'.");
+            }
+        }else{
+            alert("No se encuentra registrado, por favor retirese.")
+        }
     }
 }
 
@@ -76,28 +104,34 @@ const validationQuest = (c) =>{
 }
 
 const opcionesOfSystem = ()=>{
-    let opcions = prompt("Que operacion desea hacer: 1- Ver informacion, 2- Ingresar en las Escuela e inscribirse en las asignaturas");
+    let opcions = prompt("Que operacion desea hacer: 1- Ver informacion, 2- Ingresar en las Escuela e inscribirse en las asignaturas 3- Operaciones de estudiantes.");
     if (opcions == 1){
         let menu = prompt("Este es el menu de informacion. 1- Conocer asignaturas, 2- Conocer Profesores, 3- Conocer Alumnos 4-Clases");
         if(menu == 1){
             clasesCofla.infoOfSignatures();
+            return opcionesOfSystem();
         }else if (menu == 2){
             clasesCofla.infoOfProfesors();
+            return opcionesOfSystem();
         }else if(menu == 3){
             clasesCofla.infoOfStudent();
+            return opcionesOfSystem();
         }else if (menu == 4){
             clasesCofla.correspondetTeacher();
+            return opcionesOfSystem();
         }else{
             alert("Muchas Gracias, puede irse o realice una operacion valida.");
         }
     }else if(opcions == 2){
-
+        clasesCofla.opcionesOfSystem2();
+        opcionesOfSystem();
     }else{
         alert("Muchas Gracias, puede irse o realice una operacion valida.");
+        opcionesOfSystem();
     }
 }
 
-let signature =  ["Matematica", "Algebra", "Programacion POO", "Logica", "Ingeneria de sistemas", "Calculo", "Programacion Phyton", "Programacion Php", "Git y Github", "Scrum", "Marketin Digital", "Ingles"];
+let signature =  ["Matematicas", "Algebra", "Programacion POO", "Logica", "Ingeneria de sistemas", "Calculo", "Programacion Phyton", "Programacion Php", "Git y Github", "Scrum", "Marketin Digital", "Ingles"];
 let profesors =  ["Alberto Perez", "Rodrigo Martinez", "Pablo Fench", "Lixandra Labandera","Marcos Piotosi", "Maritza Cabello"];
 let student = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez", "Yordi Garcia", "Jesler Gutierrez", "Raiko Saiz", "Anelys Padilla", "Lisandra Portales", "Camila Cabello", "Alain Alderete", "Pocho Gonzales", "Mario Napoles", "Charry Misifu"];
 
