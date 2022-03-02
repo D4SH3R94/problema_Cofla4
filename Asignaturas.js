@@ -36,13 +36,14 @@ class Clases{
                     let arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no continuar escriba 'no'.");
                     let createArraysSignatures = [];
                     let definitiveArraysSignature = createArraysSignatures.push(arraysSignatures);
+                    document.write(`${createArraysSignatures}<br>`);
                     if(this.asignaturas.includes(arraysSignatures) == true){
                         alert("Prosiga");
                     }else if(arraysSignatures == "no"){
-                        alert("Muchas Gracias, puede irse");
+                        alert("En Pantalla se muesta las asignaturas a cursar. Muchas Gracias, puede irse");
                         break;
                     }else{
-                        alert("Se ha equivocado o la asignatura no se encuentra para impartir, por favor escriba una asignatura valida.");
+                        alert("En Pantalla se muesta las asignaturas a cursar. Se ha equivocado o la asignatura no se encuentra para impartir, por favor escriba una asignatura valida.");
                         break;
                 }
             }
@@ -53,15 +54,6 @@ class Clases{
             }
         }else{
             alert("No se encuentra registrado, por favor retirese.")
-        }
-    }opcionStudent(){
-        let opcionsForStudent = prompt("Escriba 1- Para ver sus aignaturas, 2- ");
-        if(opcionsForStudent == 1){
-            let autenticationForStudent = prompt("Cual es tu nombre?");
-            if(this.alumnos.includes(autenticationForStudent) == true){
-                let valorOfStudent = this.alumnos.indexOf(autenticationForStudent)
-                document.write(this.alumnos[valorOfStudent])
-            }
         }
     }
 }
@@ -116,25 +108,25 @@ const opcionesOfSystem = ()=>{
     if (opcions == 1){
         let menu = prompt("Este es el menu de informacion. 1- Conocer asignaturas, 2- Conocer Profesores, 3- Conocer Alumnos 4-Clases");
         if(menu == 1){
-            clasesCofla.infoOfSignatures();
+            clasesIngeneriaDeSistemas.infoOfSignatures();
             return opcionesOfSystem();
         }else if (menu == 2){
-            clasesCofla.infoOfProfesors();
+            clasesIngeneriaDeSistemas.infoOfProfesors();
             return opcionesOfSystem();
         }else if(menu == 3){
-            clasesCofla.infoOfStudent();
+            clasesIngeneriaDeSistemas.infoOfStudent();
             return opcionesOfSystem();
         }else if (menu == 4){
-            clasesCofla.correspondetTeacher();
+            clasesIngeneriaDeSistemas.correspondetTeacher();
             return opcionesOfSystem();
         }else{
             alert("Muchas Gracias, puede irse o realice una operacion valida.");
         }
     }else if(opcions == 2){
-        clasesCofla.opcionesOfSystem2();
+        clasesIngeneriaDeSistemas.opcionesOfSystem2();
         opcionesOfSystem();
     }else if(opcions ==  3){
-        clasesCofla.opcionStudent()
+        clasesIngeneriaDeSistemas.opcionStudent()
     }else{
         alert("Muchas Gracias, puede irse o realice una operacion valida.");
         opcionesOfSystem();
@@ -145,6 +137,6 @@ let signature =  ["Matematicas", "Algebra", "Programacion POO", "Logica", "Ingen
 let profesors =  ["Alberto Perez", "Rodrigo Martinez", "Pablo Fench", "Lixandra Labandera","Marcos Piotosi", "Maritza Cabello"];
 let student = ["Cofla Rompepelotas", "Miguel Paulino", "Daniela Marquez", "Yordi Garcia", "Jesler Gutierrez", "Raiko Saiz", "Anelys Padilla", "Lisandra Portales", "Camila Cabello", "Alain Alderete", "Pocho Gonzales", "Mario Napoles", "Charry Misifu"];
 
-const clasesCofla = new Clases(signature,profesors,student);
+const clasesIngeneriaDeSistemas = new Clases(signature,profesors,student);
 
 opcionesOfSystem();
