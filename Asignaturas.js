@@ -28,7 +28,7 @@ class Clases{
         _______ Maritza Cabello - Marketin Digital, Ingles. <br></Br>`)
         
     }opcionesOfSystem2(){
-        let autenticationStudent = prompt("Cual es tu nombre.");
+        let autenticationStudent = prompt("Cual es tu nombre?");
         if (this.alumnos.includes(autenticationStudent) == true){
             let decitionsStudent = prompt("Quiere inscribirse, si o no?");
             if(decitionsStudent.toLocaleLowerCase() == "si"){
@@ -36,7 +36,6 @@ class Clases{
                     let arraysSignatures = prompt("Escribe una asignatura a cursar, en caso de no continuar escriba 'no'.");
                     let createArraysSignatures = [];
                     let definitiveArraysSignature = createArraysSignatures.push(arraysSignatures);
-                    document.write(`${autenticationStudent}: ${createArraysSignatures}`);
                     if(this.asignaturas.includes(arraysSignatures) == true){
                         alert("Prosiga");
                     }else if(arraysSignatures == "no"){
@@ -54,6 +53,15 @@ class Clases{
             }
         }else{
             alert("No se encuentra registrado, por favor retirese.")
+        }
+    }opcionStudent(){
+        let opcionsForStudent = prompt("Escriba 1- Para ver sus aignaturas, 2- ");
+        if(opcionsForStudent == 1){
+            let autenticationForStudent = prompt("Cual es tu nombre?");
+            if(this.alumnos.includes(autenticationForStudent) == true){
+                let valorOfStudent = this.alumnos.indexOf(autenticationForStudent)
+                document.write(this.alumnos[valorOfStudent])
+            }
         }
     }
 }
@@ -125,6 +133,8 @@ const opcionesOfSystem = ()=>{
     }else if(opcions == 2){
         clasesCofla.opcionesOfSystem2();
         opcionesOfSystem();
+    }else if(opcions ==  3){
+        clasesCofla.opcionStudent()
     }else{
         alert("Muchas Gracias, puede irse o realice una operacion valida.");
         opcionesOfSystem();
